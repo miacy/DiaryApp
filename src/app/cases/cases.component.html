@@ -1,0 +1,5 @@
+<h2>Project list:</h2>
+<li *ngFor="let case of demo_cases" (click)="onSelect(case)">
+    {{case.id}} : <span> {{case.name}} </span>
+</li>
+<app-case-detail [case]="selectedCase"></app-case-detail>

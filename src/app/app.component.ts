@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { from } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+
 
 @Component({
   selector: 'app-root',
@@ -6,5 +9,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Web';
+  title = 'BizLink';
+
+  ROOT_URL = "http://localhost:3000/products";
+  product: any;
+  constructor(private http: HttpClient) {}
+
+  getProduct() {
+    this.product = this.http.get(this.ROOT_URL);
+  }
 }

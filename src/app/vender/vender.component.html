@@ -1,0 +1,22 @@
+<div class="wrap">
+    <h1>Vender Page After Login</h1>
+
+    <form (ngSubmit)="onUploadTender(tenderForm)" #tenderForm="ngForm">
+        <input 
+            type="text" 
+            name="title" 
+            placeholder="title" 
+            ngModel> <br>
+        <textarea 
+            name="content" 
+            placeholder="content"
+            ngModel></textarea> <br>
+        <button type="submit">Upload</button>
+    </form>
+
+    <div *ngFor="let tender of tender_list">
+        {{ tender | json }}
+    </div>
+
+    <app-requirement-list></app-requirement-list>
+</div>
